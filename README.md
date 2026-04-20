@@ -37,3 +37,9 @@ A (xanh lá) = Added - file mới đã add vào staging
 D (đỏ) = Deleted - file đã xóa
 C = Conflict - xung đột khi merge
 R = Renamed - file đổi tên
+
+## Cách bước lấy dữ liệu đẩy dữ liệu
+1. git pull origin main # Lấy code mới nhất từ GitHub về máy Khi code xong nên pull lại 1 lần nữa để đồng bộ code của cả nhóm (làm lại bước 1)
+2. git add . # Thêm file bạn vừa sửa / cập nhật code vừa mình làm
+3. git commit -m "Cập nhật phần ... của Thành viên 1|2|3..."
+4. git push origin main # Đẩy code lên GitHub 
