@@ -23,7 +23,7 @@ Trong các đợt backtest (01/2024 - 03/2024) với các mã cổ phiếu công
 - Khả năng giải thích: Mọi quyết định đều đi kèm với nhật ký suy luận bằng ngôn ngữ tự nhiên.
 
 ## 🛠 Cài đặt
-Hướng dẫn cài đặt nhanh:
+Hướng dẫn cài đặt: 
 git clone https://github.com/anh922006/Trading-Agent.git
 cd Trading-Agent
 python -m venv venv  #cài môi trường ảo
