@@ -25,7 +25,7 @@ Trong các đợt backtest (01/2024 - 03/2024) với các mã cổ phiếu công
 ## 🛠 Cài đặt
 Hướng dẫn cài đặt nhanh:
 git clone https://github.com/anh922006/Trading-Agent.git
-cd TradingAgents
+cd Trading-Agent
 python -m venv venv  #cài môi trường ảo
 venv\Scripts\activate
 pip install -r requirements.txt
