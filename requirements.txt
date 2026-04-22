@@ -1,23 +1,23 @@
 # --- Core Data & Processing ---
-pandas==2.2.1
-numpy==1.26.4
-stockstats==0.6.2
+pandas
+numpy
+stockstats
 
 # --- Financial & News APIs ---
-yfinance==0.2.37
-finnhub-python==2.4.19
-eodhd==1.0.8
-praw==7.7.1
+yfinance
+finnhub-python
+eodhd
+praw
 
 # --- LLM & Agentic Framework ---
-openai==1.14.3
-langchain==0.1.12
+openai
+langchain
 
 # --- Analysis & Visualization ---
-matplotlib==3.8.3
-seaborn==0.13.2
-scikit-learn==1.4.1
+matplotlib
+seaborn
+scikit-learn
 
 # --- Utilities ---
-python-dotenv==1.0.1
-requests==2.31.0
+python-dotenv
+requests
