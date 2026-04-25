@@ -1,5 +1,10 @@
 {
+    "symbol": "AAPL",
+    "update_at": "2026-04-26",
     "news": [
+        "Dow Jones Futures: Iran Talks Shelved; Apple, Amazon, Google Lead Earnings Wave",
+        "A Look At Skyworks Solutions (SWKS) Valuation After Barclays Upgrade And Apple Device Delay",
+        "The Highest-Paid CEO Is a Furniture Salesman",
         "Goldman Sachs reassesses Apple stock ahead of earnings",
         "Tech Heavyweights To Report Next Week, Fed Rate Decision Also In Focus",
         "Stock Market Week Ahead: Hyperscaler Blitz, Federal Reserve Transition",
@@ -11,10 +16,7 @@
         "Apple, Amazon, Others Not Seeking Tariff Refunds To Avoid Offending Trump? The President Says He'll 'Remember' Them",
         "The Look Ahead: April 24, 2026",
         "Review & Preview: Dot-Com Glory Days",
-        "Mag 7 Earnings Take the Spotlight: What to Expect",
-        "Elon Musk vs. Sam Altman, Mag 7 earnings, Fed meeting: What to Watch",
-        "Warren Buffett Quietly Sold 75% of His Biggest Holding. This Is Where the Money Went.",
-        "2 Reasons Investors Should Be Excited for the New Apple CEO"
+        "Mag 7 Earnings Take the Spotlight: What to Expect"
     ],
     "financials": {
         "10DayAverageTradingVolume": 44.08841,
