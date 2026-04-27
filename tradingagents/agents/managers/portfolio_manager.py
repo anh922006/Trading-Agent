@@ -68,8 +68,8 @@ Be decisive and ground every conclusion in specific evidence from the analysts.{
             structured_llm,
             llm,
             prompt,
-            render_research_plan=render_pm_decision, # Sửa nhẹ tên tham số cho khớp logic render
-            agent_name="Portfolio Manager",
+            render_pm_decision,
+            "Portfolio Manager",
         )
 
         os.makedirs("results", exist_ok=True)
