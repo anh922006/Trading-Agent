@@ -14,7 +14,7 @@ from tradingagents.agents.utils.structured import (
 
 
 def _save_debate_checkpoint(symbol: str, state: dict, round_num: int):
-    """Lưu toàn bộ debate history sau mỗi vòng tranh luận."""
+    """Lưu toàn bộ debate history sau mỗi vòng tranh luận (Giữ nguyên chức năng cũ)."""
     os.makedirs("results", exist_ok=True)
     os.makedirs("data", exist_ok=True)
 
@@ -68,11 +68,19 @@ def create_research_manager(llm):
         history = state["investment_debate_state"].get("history", "")
         investment_debate_state = state["investment_debate_state"]
 
-        # ── Lưu checkpoint trước khi gọi LLM tổng kết ───────────────────
         symbol = state.get("company_of_interest", "Unknown")
         current_round = investment_debate_state.get("count", 0)
+
+        # ── 1. Lưu checkpoint (Markdown từng vòng + JSON data) ────────────────
         _save_debate_checkpoint(symbol, state, round_num=current_round)
-        # ─────────────────────────────────────────────────────────────────
+
+        # ── 2. LƯU TOÀN BỘ LỊCH SỬ TRANH LUẬN (FULL DEBATE HISTORY) ────────────
+        full_history_path = f"results/{symbol}_FULL_DEBATE_HISTORY.md"
+        with open(full_history_path, "w", encoding="utf-8") as f:
+            f.write(f"# FULL INVESTMENT DEBATE SESSION: {symbol}\n")
+            f.write(f"Generated at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+            f.write(history)
+        print(f" [SYSTEM]: DA LUU TOAN BO CUOC TRANH LUAN TAI: {full_history_path}")
 
         prompt = f"""As the Research Manager and debate facilitator, your role is to critically evaluate this round of debate and deliver a clear, actionable investment plan for the trader.
 
@@ -102,20 +110,18 @@ Commit to a clear stance whenever the debate's strongest arguments warrant one; 
             "Research Manager",
         )
 
-        # ── Lưu final investment plan (giữ nguyên code cũ) ───────────────
+        # ── 3. Lưu final investment plan ──────────────────────────────────────
         os.makedirs("results", exist_ok=True)
-
         file_path = f"results/{symbol}_final_investment_plan.md"
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(str(investment_plan))
 
         print(f"\n💎 [SYSTEM]: DA CHOT QUYET DINH CUOI CUNG CHO {symbol}!")
         print(f"📂 [SYSTEM]: KET QUA DA DUOC LUU TAI: {file_path}")
-        # ─────────────────────────────────────────────────────────────────
 
         new_investment_debate_state = {
             "judge_decision": investment_plan,
-            "history": investment_debate_state.get("history", ""),
+            "history": history,
             "bear_history": investment_debate_state.get("bear_history", ""),
             "bull_history": investment_debate_state.get("bull_history", ""),
             "current_response": investment_plan,
