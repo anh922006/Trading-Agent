@@ -9,7 +9,7 @@ from tradingagents.agents.utils.agent_utils import (
     get_language_instruction,
 )
 from tradingagents.dataflows.config import get_config
-
+import os 
 
 def create_fundamentals_analyst(llm):
     def fundamentals_analyst_node(state):
@@ -60,6 +60,22 @@ def create_fundamentals_analyst(llm):
 
         if len(result.tool_calls) == 0:
             report = result.content
+            
+            os.makedirs("results", exist_ok=True)
+            
+            # 2. Lấy tên mã cổ phiếu (Ticker)
+            symbol = state.get("company_of_interest", "Unknown")
+            
+            # 3. Đường dẫn file
+            file_path = f"results/{symbol}_fundamentals_report.md"
+            
+            # 4. Ghi nội dung vào file
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write(f"# FUNDAMENTALS ANALYSIS REPORT: {symbol}\n\n")
+                f.write(report)
+                
+            print(f" [SYSTEM]: Đã lưu báo cáo cơ bản tại: {file_path}")
+            # -----------------------------------------------
 
         return {
             "messages": [result],

@@ -9,6 +9,7 @@ back gracefully to free-text generation.
 """
 
 from __future__ import annotations
+import os 
 
 from tradingagents.agents.schemas import PortfolioDecision, render_pm_decision
 from tradingagents.agents.utils.agent_utils import (
@@ -67,20 +68,32 @@ Be decisive and ground every conclusion in specific evidence from the analysts.{
             structured_llm,
             llm,
             prompt,
-            render_pm_decision,
-            "Portfolio Manager",
+            render_research_plan=render_pm_decision, # Sửa nhẹ tên tham số cho khớp logic render
+            agent_name="Portfolio Manager",
         )
+
+        os.makedirs("results", exist_ok=True)
+        symbol = state.get("company_of_interest", "Unknown")
+        
+        file_path = f"results/{symbol}_final_portfolio_decision.md"
+        
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(f"# FINAL PORTFOLIO DECISION: {symbol}\n\n")
+            f.write(str(final_trade_decision))
+            
+        print(f" [SYSTEM]: ĐÃ CHỐT QUYẾT ĐỊNH CUỐI CÙNG TẠI: {file_path}")
+        # -----------------------------------------------
 
         new_risk_debate_state = {
             "judge_decision": final_trade_decision,
             "history": risk_debate_state["history"],
-            "aggressive_history": risk_debate_state["aggressive_history"],
-            "conservative_history": risk_debate_state["conservative_history"],
-            "neutral_history": risk_debate_state["neutral_history"],
+            "aggressive_history": risk_debate_state.get("aggressive_history", ""),
+            "conservative_history": risk_debate_state.get("conservative_history", ""),
+            "neutral_history": risk_debate_state.get("neutral_history", ""),
             "latest_speaker": "Judge",
-            "current_aggressive_response": risk_debate_state["current_aggressive_response"],
-            "current_conservative_response": risk_debate_state["current_conservative_response"],
-            "current_neutral_response": risk_debate_state["current_neutral_response"],
+            "current_aggressive_response": risk_debate_state.get("current_aggressive_response", ""),
+            "current_conservative_response": risk_debate_state.get("current_conservative_response", ""),
+            "current_neutral_response": risk_debate_state.get("current_neutral_response", ""),
             "count": risk_debate_state["count"],
         }
 

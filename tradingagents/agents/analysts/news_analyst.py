@@ -6,7 +6,7 @@ from tradingagents.agents.utils.agent_utils import (
     get_news,
 )
 from tradingagents.dataflows.config import get_config
-
+import os 
 
 def create_news_analyst(llm):
     def news_analyst_node(state):
@@ -53,6 +53,18 @@ def create_news_analyst(llm):
 
         if len(result.tool_calls) == 0:
             report = result.content
+            
+            os.makedirs("results", exist_ok=True) 
+            symbol = state.get("company_of_interest", "Unknown")
+            
+            file_path = f"results/{symbol}_news_report.md"
+            
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write(f"# NEWS ANALYSIS REPORT: {symbol}\n\n")
+                f.write(report)
+                
+            print(f" [SYSTEM]: Đã lưu báo cáo tin tức tại: {file_path}")
+            # -----------------------------------------------
 
         return {
             "messages": [result],

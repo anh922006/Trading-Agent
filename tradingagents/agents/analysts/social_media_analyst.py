@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from tradingagents.agents.utils.agent_utils import build_instrument_context, get_language_instruction, get_news
 from tradingagents.dataflows.config import get_config
-
+import os 
 
 def create_social_media_analyst(llm):
     def social_media_analyst_node(state):
@@ -48,6 +48,18 @@ def create_social_media_analyst(llm):
 
         if len(result.tool_calls) == 0:
             report = result.content
+            
+            os.makedirs("results", exist_ok=True) # Đảm bảo thư mục tồn tại
+            symbol = state.get("company_of_interest", "Unknown")
+            
+            file_path = f"results/{symbol}_social_media_report.md"
+            
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write(f"# SOCIAL MEDIA & SENTIMENT REPORT: {symbol}\n\n")
+                f.write(report)
+                
+            print(f"✅ [SYSTEM]: Đã lưu báo cáo mạng xã hội tại: {file_path}")
+            # -----------------------------------------------
 
         return {
             "messages": [result],
