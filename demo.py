@@ -4,7 +4,7 @@ import matplotlib.dates as mdates
 import numpy as np
 
 # Đọc data AAPL đã cào
-df = pd.read_csv("AAPL-YFin-data-2021-04-27-2026-04-27.csv")
+df = pd.read_csv("data/AAPL-YFin-data-2021-04-27-2026-04-27.csv")
 df["Date"] = pd.to_datetime(df["Date"])
 df = df.sort_values("Date").reset_index(drop=True)
 
