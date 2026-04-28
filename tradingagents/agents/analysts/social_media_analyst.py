@@ -50,16 +50,6 @@ def create_social_media_analyst(llm):
             report = result.content
             
             os.makedirs("results", exist_ok=True) # Đảm bảo thư mục tồn tại
-            symbol = state.get("company_of_interest", "Unknown")
-            
-            file_path = f"results/{symbol}_social_media_report.md"
-            
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(f"# SOCIAL MEDIA & SENTIMENT REPORT: {symbol}\n\n")
-                f.write(report)
-                
-            print(f"✅ [SYSTEM]: Đã lưu báo cáo mạng xã hội tại: {file_path}")
-            # -----------------------------------------------
 
         return {
             "messages": [result],
