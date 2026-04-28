@@ -73,16 +73,6 @@ Be decisive and ground every conclusion in specific evidence from the analysts.{
         )
 
         os.makedirs("results", exist_ok=True)
-        symbol = state.get("company_of_interest", "Unknown")
-        
-        file_path = f"results/{symbol}_final_portfolio_decision.md"
-        
-        with open(file_path, "w", encoding="utf-8") as f:
-            f.write(f"# FINAL PORTFOLIO DECISION: {symbol}\n\n")
-            f.write(str(final_trade_decision))
-            
-        print(f" [SYSTEM]: ĐÃ CHỐT QUYẾT ĐỊNH CUỐI CÙNG TẠI: {file_path}")
-        # -----------------------------------------------
 
         new_risk_debate_state = {
             "judge_decision": final_trade_decision,

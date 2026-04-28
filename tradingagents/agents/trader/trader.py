@@ -54,16 +54,6 @@ def create_trader(llm):
         )
 
         os.makedirs("results", exist_ok=True)
-        symbol = state.get("company_of_interest", "Unknown")
-        
-        file_path = f"results/{symbol}_trader_proposal.md"
-        
-        with open(file_path, "w", encoding="utf-8") as f:
-            f.write(f"# CONCRETE TRANSACTION PROPOSAL: {symbol}\n\n")
-            f.write(str(trader_plan))
-            
-        print(f" [SYSTEM]: DA LUU DE XUAT GIAO DICH CUA TRADER TAI: {file_path}")
-        # -----------------------------------------------
 
         return {
             "messages": [AIMessage(content=trader_plan)],

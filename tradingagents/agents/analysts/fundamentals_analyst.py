@@ -61,21 +61,7 @@ def create_fundamentals_analyst(llm):
         if len(result.tool_calls) == 0:
             report = result.content
             
-            os.makedirs("results", exist_ok=True)
-            
-            # 2. Lấy tên mã cổ phiếu (Ticker)
-            symbol = state.get("company_of_interest", "Unknown")
-            
-            # 3. Đường dẫn file
-            file_path = f"results/{symbol}_fundamentals_report.md"
-            
-            # 4. Ghi nội dung vào file
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(f"# FUNDAMENTALS ANALYSIS REPORT: {symbol}\n\n")
-                f.write(report)
-                
-            print(f" [SYSTEM]: Đã lưu báo cáo cơ bản tại: {file_path}")
-            # -----------------------------------------------
+            os.makedirs("results", exist_ok=True)            
 
         return {
             "messages": [result],

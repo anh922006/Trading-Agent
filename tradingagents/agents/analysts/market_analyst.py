@@ -83,20 +83,6 @@ Volume-Based Indicators:
         import os
         os.makedirs("results", exist_ok=True)
         
-        # 2. Lấy tên mã cổ phiếu để đặt tên file
-        symbol = state.get("company_of_interest", "Unknown")
-        
-        # 3. Nếu AI đã viết xong báo cáo Market Analyst, lưu ngay vào folder results
-        if report:
-            file_path = f"results/{symbol}_market_report.md"
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(report)
-            print(f"\n [SYSTEM]: DA LUU BAO CAO MARKET ANALYST CHO {symbol} VAO: {file_path}")
-        
-        # 4. Thông báo để nhóm biết là bước cào/tính toán đã xong
-        print(f"🚀 [SYSTEM]: MARKET ANALYST DA HOAN THANH PHAN TICH DU LIEU CHO {symbol}")
-        # ------------------------------------------------------
-
         return {
             "messages": [result],
             "market_report": report,
