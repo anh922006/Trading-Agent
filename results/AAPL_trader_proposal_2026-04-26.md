@@ -1,13 +1,13 @@
 # CONCRETE TRANSACTION PROPOSAL: AAPL
 
-**Action**: Hold
+**Action**: Sell
 
-**Reasoning**: The research plan identifies a balanced but cautious outlook for AAPL at $271. The bull case is supported by record revenue ($143.8B), massive buybacks ($90.7B in 15 months), and strong operating leverage, while the bear case highlights troubling technical divergences (MACD contraction, declining 50-SMA at $260) and a stretched forward P/E of 28.6x. The 58% V-shaped rally in 11 sessions without a pullback creates asymmetric downside risk (6.3% to $253) versus limited upside (2.2% to $277 upper Bollinger Band). A Hold rating aligns with the plan's recommendation to maintain current positions and wait for a better entry near $250–$260.
+**Reasoning**: The Research Manager's plan assigns an Underweight rating to AAPL, citing overbought technical conditions (RSI elevated, MACD momentum flattening), macro headwinds (Iran conflict, rising gasoline prices, rate expectations), and a stretched valuation at 34x trailing earnings. The recommendation is to trim 15–25% of existing positions into strength near $274–$277, with a hard stop at $258. New entries should be avoided until a pullback to the $250–$255 support zone. Given the unfavorable risk/reward skew and the Bear's forward-looking case outweighing the Bull's backward-looking fundamentals, a Sell (reduce exposure) is the appropriate action.
 
-**Entry Price**: 255.0
+**Entry Price**: 274.0
 
-**Stop Loss**: 239.0
+**Stop Loss**: 258.0
 
-**Position Sizing**: Maintain current position; do not add at $271. Accumulate on weakness to $250–$260 range.
+**Position Sizing**: Reduce 15-25% of existing position; do not initiate new long.
 
-FINAL TRANSACTION PROPOSAL: **HOLD**
+FINAL TRANSACTION PROPOSAL: **SELL**
