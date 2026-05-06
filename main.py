@@ -25,7 +25,13 @@ ta = TradingAgentsGraph(debug=True, config=config)
 
 # forward propagate
 _, decision = ta.propagate("AAPL", "2026-04-24")
+
+# Chạy ngày 2 — hệ thống tự resolve ngày 1, viết reflection
+_, decision = ta.propagate("AAPL", "2026-04-25")
 print(decision)
+
+_, decision3 = ta.propagate("AAPL", "2026-04-26")
+print("Ngày 3:", decision3)
 
 # Memorize mistakes and reflect
 # ta.reflect_and_remember(1000) # parameter is the position returns

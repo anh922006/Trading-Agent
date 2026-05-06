@@ -46,5 +46,8 @@ DEFAULT_CONFIG = {
     # Tool-level configuration (takes precedence over category-level)
     "tool_vendors": {
         # Example: "get_stock_data": "alpha_vantage",  # Override category default
+    
     },
+    "memory_log_path": "results/memory_log.md",   # ← thêm dòng này
+    "memory_log_max_entries": 50,                  # ← thêm dòng này
 }
