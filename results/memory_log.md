@@ -444,7 +444,7 @@ Directional call was correct: alpha of +1.6% against SPY validated the underweig
 
 <!-- ENTRY_END -->
 
-[2026-04-26 | AAPL | Underweight | pending]
+[2026-04-26 | AAPL | Underweight | +3.4% | +3.0% | 5d]
 
 DECISION:
 ## Final Trading Decision: AAPL
@@ -502,6 +502,9 @@ The three analysts converge on a reduction, differing only on size and stop plac
 **Conviction:** This is a **disciplined Underweight**—not a panic sell. The evidence is weighted toward the bear case: stretched valuation, deteriorating macro, and a fragile technical setup with asymmetric risk/reward. The 20% reduction aligns with the Research Manager’s plan and the trader’s proposal, while the $258 stop (supported by the Neutral and Conservative analysts) balances capital protection with room for normal volatility.
 
 **Final word:** The debate confirms that the most probable near‑term outcome is a pullback to re‑test the 50‑day SMA, not a fresh breakout. Trim now, protect with a stop, and wait for a better entry. **Underweight AAPL – reduce exposure, stay disciplined.**
+
+REFLECTION:
+Directional call was correct: alpha of +3.0% confirmed the underweight decision outperformed holding SPY. The macro headwinds thesis—Iran-driven inflation, rate hike risk, and consumer spending pressure on iPhone demand—held as dominant factors while the bullish technical setup proved fragile. Lesson: when technicals are uniformly bullish but macro and valuation offer no margin of safety, weight the forward-looking bear case over backward-looking bull case.
 
 <!-- ENTRY_END -->
 
